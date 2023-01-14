@@ -1,8 +1,10 @@
 import fetcher from "../utils/fetcher"
 import cheerio from "cheerio"
 import { TopAnime, DataError } from "../../types/common"
+import {getInfoFromName} from 'mal-scraper'
 
-const dataScrape:TopAnime[] = []
+const promises:Promise<any>[] = [];
+
 const TopAnimeScrape = async (url: string) => {
     try{
         const getUrl = await fetcher(url)
@@ -25,21 +27,12 @@ const TopAnimeScrape = async (url: string) => {
                 const status: string = $(el).find('div.at-mcc-e-movement > div.arrow-container > img').attr('alt')
                 const stat: string = $(el).find('div.at-mcc-e-movement > div.arrow-number').text().trim()
 
-                dataScrape.push({
-                    title,
-                    imageUrl,
-                    studio,
-                    rank,
-                    stats: {
-                        peak,
-                        previously,
-                        weeksOnTop,
-                        status,
-                        stat
-                    }
-                })
+                promises.push(getInfoFromName(title));
             })
-            return Promise.resolve(dataScrape)
+
+            const data = await Promise.all(promises);
+
+            return Promise.resolve(data)
         }
     }catch(e){
         return Promise.reject(e)
