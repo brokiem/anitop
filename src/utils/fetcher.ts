@@ -1,18 +1,7 @@
-import axios, { AxiosRequestConfig } from "axios";
-import edgeChromium from 'chrome-aws-lambda';
-import puppeteer from 'puppeteer-core';
+import puppeteer from 'puppeteer';
 
-const axiosInstance = axios.create()
 const fetcher = async (url: string) => {
-    const executablePath = await edgeChromium.executablePath;
-
-    console.log(executablePath)
-
-    const browser = await puppeteer.launch({
-        executablePath,
-        args: edgeChromium.args,
-        headless: false,
-    })
+    const browser = await puppeteer.launch()
 
     const page = await browser.newPage()
     await page.goto(url)
