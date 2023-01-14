@@ -6,6 +6,8 @@ const axiosInstance = axios.create()
 const fetcher = async (url: string) => {
     const executablePath = await edgeChromium.executablePath;
 
+    console.log(executablePath)
+
     const browser = await puppeteer.launch({
         executablePath,
         args: edgeChromium.args,
