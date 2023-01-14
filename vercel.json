@@ -2,7 +2,7 @@
     "redirects": [
         {
             "source": "/",
-            "destination": "https://anitop.vercel.app/api"
+            "destination": "https://anitop-brokiem.vercel.app/api"
         }
     ],
     "headers": [

@@ -25,21 +25,21 @@ interface Data {
 export default (_, response: NowResponse) => {
     const data: Data = {
         listApi: {
-            musicChart: "https://anitop.vercel.app/api/v1/music-chart",
-            coupleShip: "https://anitop.vercel.app/api/v1/couple-ship",
+            musicChart: "https://anitop-brokiem.vercel.app/api/v1/music-chart",
+            coupleShip: "https://anitop-brokiem.vercel.app/api/v1/couple-ship",
             characters: {
-                maleCharacter: "https://anitop.vercel.app/api/v1/male-character",
-                femaleCharacter: "https://anitop.vercel.app/api/v1/female-character"
+                maleCharacter: "https://anitop-brokiem.vercel.app/api/v1/male-character",
+                femaleCharacter: "https://anitop-brokiem.vercel.app/api/v1/female-character"
             },
             ostSongs: {
-                openingSong: "https://anitop.vercel.app/api/v1/opening-song",
-                endingSong: "https://anitop.vercel.app/api/v1/ending-song"
+                openingSong: "https://anitop-brokiem.vercel.app/api/v1/opening-song",
+                endingSong: "https://anitop-brokiem.vercel.app/api/v1/ending-song"
             },
-            topAnime: "https://anitop.vercel.app/api/v1/top-anime"
+            topAnime: "https://anitop-brokiem.vercel.app/api/v1/top-anime"
         },
         note: "Every endpoint API has a query params named limit and type data of limit is number",
-        author: "Satya Wikananda",
-        source: "https://github.com/satyawikananda/anitop"
+        author: "",
+        source: ""
     }
 
     response.status(200).send(data)
