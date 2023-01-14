@@ -8,7 +8,6 @@ const TopAnimeScrape = async (url: string) => {
         const getUrl = await fetcher(url)
         const response = getUrl
 
-        console.log(response)
         if(response.status == 200) {
             const html = response.data
             const $ = cheerio.load(html)

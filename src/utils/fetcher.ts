@@ -9,8 +9,6 @@ const fetcher = async (url: string) => {
 
     const content = await page.content()
 
-    console.log(content)
-
     await browser.close();
 
     const response = {
