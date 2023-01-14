@@ -5,6 +5,7 @@ const fetcher = async (url: string) => {
 
     const page = await browser.newPage()
     await page.goto(url)
+    await page.waitForSelector('.at-mcc-entry', { timeout: 10000 });
 
     const content = await page.content()
 
