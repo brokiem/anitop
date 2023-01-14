@@ -43,12 +43,7 @@ const TopAnimeScrape = async (url: string) => {
             return Promise.resolve(dataScrape)
         }
     }catch(e){
-        const error: DataError = {
-            code: e.response.status,
-            status: "Failed",
-            message: e.response.statusText
-        }
-        return Promise.reject(error)
+        return Promise.reject(e)
     }
 }
 
