@@ -35,6 +35,8 @@
   "dependencies": {
     "axios": "^0.21.0",
     "chalk": "^4.1.0",
-    "cheerio": "^1.0.0-rc.3"
+    "cheerio": "^1.0.0-rc.3",
+    "chrome-aws-lambda": "10.1.0",
+    "puppeteer-core": "10.1.0"
   }
 }
