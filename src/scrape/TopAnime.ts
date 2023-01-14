@@ -17,10 +17,7 @@ const TopAnimeScrape = async (url: string) => {
                 const title: string = $(el).find('div.at-mcc-e-details > div.entry-title').text().trim()
                 const imageUrl: string = $(el).find('div.at-mcc-e-details > div.at-mcc-e-thumbnail > img').attr('src')
                 const studio: string = $(el).find('div.at-mcc-e-details > div.entry-detail').text().trim()
-                console.log($(el).find('div.at-mcc-e-rank > div.main-rank').text().trim())
-                $(el).remove('div.at-mcc-e-rank > a.entry-vote')
-                console.log($(el).find('div.at-mcc-e-rank > div.main-rank').text().trim())
-                const rank: number = +$(el).find('div.at-mcc-e-rank > div.main-rank').text().trim()
+                const rank: number = +$(el).find('div.at-mcc-e-rank > div.main-rank').text().trim().replaceAll(' Vote', '')
                 const peak: number = +$(el).find('div.at-mcc-e-movement > div.stats > div.peak.stats-entry > span').text().trim()
                 let previously: string | number = $(el).find('div.at-mcc-e-movement > div.stats > div.prev.stats-entry > span').text().trim()
                 previously = previously === '-' ? '-' : +previously
